@@ -1,0 +1,93 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="websitem.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>AKIN AYHAN</title>
+    <link href="/stil.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <div class="wrapper">
+
+            <header>
+
+                <div class="logo">
+                </div>
+
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="/">AnaSayfa</a>
+                        </li>
+                        <li>
+                            <a href="icerikler.aspx">C# Notu</a>
+                        </li>
+                        <li>
+                            <a href="hakkimda.aspx">Hakkımda</a>
+                        </li>
+                        <li>
+                            <a href="iletisim.aspx">Bana Ulaşın</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="arama-wrap">
+
+                    <asp:TextBox ID="txtArama" CssClass="txtArama" runat="server" placeholder="arama" />
+
+                    <asp:Button ID="btnArama" CssClass="btnArama" Text="Ara" runat="server" OnClick="btnArama_Click" />
+
+                </div>
+
+
+            </header>
+
+            <div class="banner">
+            </div>
+
+            <div class="sol-taraf">
+                Duyurular
+
+                <br />
+                <br />
+                <br />
+
+
+                <asp:ListView ID="lstDuyuru" runat="server">
+                    <ItemTemplate>
+                        <div class="duyuru-wrap">
+                            <asp:Label Text='<%#Eval("Baslik")%>' runat="server" /><br />
+                            <asp:Label Text='<%#Eval("Duyuru")%>' runat="server" /><br />
+                            <asp:Label Text='<%#Eval("Tarih")%>' runat="server" /><br />
+                            <br />
+                        </div>
+                    </ItemTemplate>
+                </asp:ListView>
+
+
+
+            </div>
+
+            <div class="icerik">
+
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+
+            </div>
+
+            <footer>
+                AKIN AYHAN TASARIMIDIR ® 2020.
+            </footer>
+        </div>
+
+
+
+
+    </form>
+</body>
+</html>
